@@ -12,9 +12,10 @@ uint8_t *sha256(int8_t const *s, size_t len,
 		uint8_t digest[SHA256_DIGEST_LENGTH])
 {
 	uint8_t *hash_result;
+
 	if (!digest)
 		return (NULL);
 
 	hash_result = SHA256((const unsigned char *)s, len, digest);
-	return(hash_result);
+	return (hash_result);
 }
