@@ -6,10 +6,9 @@
 EC_KEY *ec_create(void)
 {
 	EC_KEY *e_key;
-	const char *curve_name = "secp256k1";
 
-	e_key = EC_KEY_new_by_curve_name(curve_name);
-	if (EC_KEY_generate_key(e_key) == NULL)
+	e_key = EC_KEY_new_by_curve_name(EC_CURVE);
+	if (!EC_KEY_generate_key(e_key))
 		return (NULL);
 	return (e_key);
 }
