@@ -14,13 +14,13 @@ uint8_t *ec_to_pub(EC_KEY const *key, uint8_t pub[EC_PUB_LEN])
 		return (NULL);
 
 	p_key = EC_KEY_get0_public_key(key);
-    if (!p_key)
-        return (NULL);
+	if (!p_key)
+		return (NULL);
 	if (!EC_POINT_point2oct(EC_KEY_get0_group(key), p_key,
 						POINT_CONVERSION_UNCOMPRESSED, pub, EC_PUB_LEN, NULL))
-    {
-        return (NULL);
-    }
+	{
+		return (NULL);
+	}
 
 	return (pub);
 }
