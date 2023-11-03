@@ -17,7 +17,7 @@ uint8_t *ec_to_pub(EC_KEY const *key, uint8_t pub[EC_PUB_LEN])
     if (!p_key)
         return (NULL);
 	if (!EC_POINT_point2oct(EC_KEY_get0_group(key), p_key,
-			POINT_CONVERSION_UNCOMPRESSED, pub, EC_PUB_LEN, NULL));
+						POINT_CONVERSION_UNCOMPRESSED, pub, EC_PUB_LEN, NULL));
     {
         return (NULL);
     }
