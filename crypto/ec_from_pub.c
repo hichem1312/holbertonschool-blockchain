@@ -19,7 +19,7 @@ EC_KEY *ec_from_pub(uint8_t const pub[EC_PUB_LEN])
 	point = EC_POINT_new(EC_KEY_get0_group(p_key));
 	if (!EC_KEY_set_public_key(p_key, point))
 	{
-		EC_KEY_free(key);
+		EC_KEY_free(p_key);
 		EC_POINT_free(point);
 		return (NULL);
 	}
@@ -27,7 +27,7 @@ EC_KEY *ec_from_pub(uint8_t const pub[EC_PUB_LEN])
 	if (!EC_POINT_oct2point(EC_KEY_get0_group(p_key), point, pub, EC_PUB_LEN
 						, NULL))
 	{
-		EC_KEY_free(key);
+		EC_KEY_free(p_key);
 		EC_POINT_free(point);
 		return (NULL);
 	}
