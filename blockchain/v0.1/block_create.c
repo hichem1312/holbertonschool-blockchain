@@ -13,9 +13,9 @@ block_t *block_create(block_t const *prev,
 	block_t *block_to_create;
 
 	if (data_len > BLOCKCHAIN_DATA_MAX)
-    {
+	{
 		data_len = BLOCKCHAIN_DATA_MAX;
-    }
+	}
 	block_to_create = calloc(1, sizeof(*block_to_create));
 	if (!block_to_create)
 		return (NULL);
