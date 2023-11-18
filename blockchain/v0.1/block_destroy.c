@@ -8,6 +8,6 @@
 void block_destroy(block_t *block)
 {
 	if (!block)
-		return(NULL);
+		return;
 	free(block);
 }
