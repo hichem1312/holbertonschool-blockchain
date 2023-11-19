@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <openssl/sha.h>
 #include <time.h>
 #include "llist.h"
 
