@@ -16,6 +16,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include "sha-256.h"
 
 /**
  * struct blockchain_s - Blockchain structure
