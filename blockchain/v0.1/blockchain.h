@@ -7,6 +7,10 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <openssl/sha.h>
+#include <openssl/ec.h>
+#include <openssl/obj_mac.h>
+#include <openssl/pem.h>
+#include <openssl/ecdsa.h>
 #include <time.h>
 #include "llist.h"
 #include <sys/types.h>
