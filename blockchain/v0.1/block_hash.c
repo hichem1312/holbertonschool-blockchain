@@ -9,10 +9,11 @@
 uint8_t *block_hash(block_t const *block,
 			uint8_t hash_buf[SHA256_DIGEST_LENGTH])
 {
-	size_t len_b;
     SHA256_CTX HASH256;
-
-	len_b = sizeof(block->info) + block->data.len;
-	sha256((int8_t const *)block, len_b, hash_buf);
+    if (!block || !hash_buf)
+		return (NULL);
+	SHA256_Init(&HASH256);
+	SHA256_Update(&HASH256, block, block->data.len + sizeof(block->info));
+	SHA256_Final(hash_buf, &HASH256);
 	return (hash_buf);
 }
