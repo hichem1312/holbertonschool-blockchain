@@ -16,7 +16,6 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "sha-256.h"
 
 /**
  * struct blockchain_s - Blockchain structure
@@ -92,6 +91,6 @@ block_t *block_create(block_t const *prev,
 void block_destroy(block_t *block);
 void blockchain_destroy(blockchain_t *blockchain);
 uint8_t *block_hash(block_t const *block,
-			uint8_t hash_buf[SHA256_DIGEST_LENGTH]);
+uint8_t hash_buf[SHA256_DIGEST_LENGTH]);
 
 #endif
