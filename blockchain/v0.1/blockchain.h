@@ -9,8 +9,9 @@
 #include <openssl/sha.h>
 #include <time.h>
 #include "llist.h"
-
-#include <openssl/sha.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 /**
  * struct blockchain_s - Blockchain structure
